@@ -25,6 +25,7 @@ function App() {
                 <Route path="/event/:id" element={<EventDetailsPage />} />
                 <Route path="/signup" element={<SignUpPage />} />
                 <Route path="/signin" element={<SignInPage />} />
+                
                 <Route
           path="/create-event"
           element={
