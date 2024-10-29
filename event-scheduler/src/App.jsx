@@ -5,7 +5,7 @@ import EventDetailsPage from './pages/EventDetailsPage';
 import SignUpPage from './pages/SignUpPage';
 import SignInPage from './pages/SignInPage';
 import CreateEventPage from './pages/CreateEventPage';
-import ProtectedRoute from "./components/ProtectedRoute"
+import ProtectedRoute from './components/ProtectedRoute'
 import NavBar from './components/NavBar';
 
 function App() {
