@@ -1,3 +1,4 @@
+/* eslint-disable react/prop-types */
 //this component is used to ensure only authenticated users can access the CreateEventPage.
 // src/components/ProtectedRoute.jsx
 import React from "react";
