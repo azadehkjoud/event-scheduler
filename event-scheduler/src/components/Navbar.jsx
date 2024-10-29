@@ -1,16 +1,5 @@
 import { NavLink, Link } from "react-router-dom";
 
-/*************  ✨ Codeium Command ⭐  *************/
-/**
- * A navigation bar component that renders links to various pages of the app.
- *
- * This component renders a navigation bar with links to the home page, about
- * page, posts page, signin page, and signup page. The links are rendered as a
- * burger menu on small screens and as a horizontal menu on large screens.
- *
- * @return {React.ReactElement} The rendered navigation bar component.
- */
-/******  c4b1bb04-1f0d-47d2-a478-e6386bb2ede8  *******/
 function Navbar() {
   return (
     <nav className="navbar bg-base-100 shadow-md p-4">
@@ -40,6 +29,7 @@ function Navbar() {
             <li><NavLink to="/" className="hover:bg-primary-focus hover:text-white rounded-lg p-2">Home</NavLink></li>
             <li><NavLink to="/about" className="hover:bg-primary-focus hover:text-white rounded-lg p-2">About</NavLink></li>
             <li><NavLink to="/posts" className="hover:bg-primary-focus hover:text-white rounded-lg p-2">Posts</NavLink></li>
+            <li><NavLink to="/create-event" className="hover:bg-primary-focus hover:text-white rounded-lg p-2">Create Event</NavLink></li>
             <li><NavLink to="/signin" className="hover:bg-primary-focus hover:text-white rounded-lg p-2">SignIn</NavLink></li>
             <li><NavLink to="/signup" className="hover:bg-primary-focus hover:text-white rounded-lg p-2">SignUp</NavLink></li>
           </ul>
