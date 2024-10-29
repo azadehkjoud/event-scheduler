@@ -14,3 +14,5 @@ export default defineConfig({
   plugins: [require("daisyui")],
 })
 
+
+
