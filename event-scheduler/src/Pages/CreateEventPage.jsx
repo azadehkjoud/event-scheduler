@@ -4,7 +4,13 @@ import { useNavigate } from "react-router-dom";
 function CreateEventPage() {
   const [eventName, setEventName] = useState("");
   const [eventDate, setEventDate] = useState("");
+  const [eventTime, setEventTime] = useState("");
+  const [eventLocation, setEventLocation] = useState("");
+  const [link, setLink] = useState(""); // Updated state name for clarity
+  const [organizer, setOrganizer] = useState("");
+  const [contactDetails, setContactDetails] = useState("");
   const [eventDescription, setEventDescription] = useState("");
+  const [notes, setNotes] = useState("");
   const [error, setError] = useState("");
   const navigate = useNavigate();
 
@@ -27,7 +33,13 @@ function CreateEventPage() {
         body: JSON.stringify({
           name: eventName,
           date: eventDate,
+          time: eventTime,
+          location: eventLocation,
+          related_link: link,
+          organizer,
+          contact_details: contactDetails,
           description: eventDescription,
+          notes,
         }),
       });
 
@@ -46,7 +58,7 @@ function CreateEventPage() {
     <div className="container mx-auto p-6">
       <h1 className="text-2xl font-bold mb-4">Create Event</h1>
       {error && <p className="text-red-500 mb-4">{error}</p>}
-      <form onSubmit={handleSubmit} className="space-y-4">
+      <form onSubmit={handleSubmit} className="bg-base-200 p-6 rounded-lg shadow-md space-y-4">
         <div>
           <label className="block mb-1 font-medium">Event Name</label>
           <input
@@ -68,11 +80,69 @@ function CreateEventPage() {
           />
         </div>
         <div>
+          <label className="block mb-1 font-medium">Event Time</label>
+          <input
+            type="time"
+            className="input input-bordered w-full"
+            value={eventTime}
+            onChange={(e) => setEventTime(e.target.value)}
+            required
+          />
+        </div> {/* Fixed unclosed div here */}
+        <div>
+          <label className="block mb-1 font-medium">Location</label>
+          <input
+            type="text"
+            className="input input-bordered w-full"
+            value={eventLocation}
+            onChange={(e) => setEventLocation(e.target.value)}
+            required
+          />
+        </div>
+        <div>
+          <label className="block mb-1 font-medium">Related Link</label>
+          <input
+            type="url"
+            className="input input-bordered w-full"
+            value={link}
+            onChange={(e) => setLink(e.target.value)} // Fixed state function here
+            required
+          />
+        </div>
+        <div>
+          <label className="block mb-1 font-medium">Organizer</label>
+          <input
+            type="text"
+            className="input input-bordered w-full"
+            value={organizer}
+            onChange={(e) => setOrganizer(e.target.value)}
+            required
+          />
+        </div>
+        <div>
+          <label className="block mb-1 font-medium">Contact Details</label>
+          <input
+            type="text"
+            className="input input-bordered w-full"
+            value={contactDetails}
+            onChange={(e) => setContactDetails(e.target.value)}
+            required
+          />
+        </div>
+        <div>
           <label className="block mb-1 font-medium">Description</label>
           <textarea
             className="textarea textarea-bordered w-full"
             value={eventDescription}
             onChange={(e) => setEventDescription(e.target.value)}
+          ></textarea>
+        </div>
+        <div>
+          <label className="block mb-1 font-medium">Notes (optional)</label>
+          <textarea
+            className="textarea textarea-bordered w-full"
+            value={notes}
+            onChange={(e) => setNotes(e.target.value)}
           ></textarea>
         </div>
         <button type="submit" className="btn btn-primary w-full">
@@ -84,3 +154,4 @@ function CreateEventPage() {
 }
 
 export default CreateEventPage;
+
