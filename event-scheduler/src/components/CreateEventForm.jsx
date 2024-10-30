@@ -1,5 +1,4 @@
 /* eslint-disable react/prop-types */
-// src/components/CreateEventForm.jsx
 import React, { useState } from "react";
 
 function CreateEventForm({ onSubmit, error }) {
