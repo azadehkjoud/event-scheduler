@@ -22,3 +22,17 @@
     gap: 1rem;
   }
   
+  .notification {
+    background-color: rgba(173, 216, 230, 0.8); /* Light blue with transparency */
+    color: white; /* Text color */
+    border-radius: 0.375rem; /* Rounded corners */
+    margin-bottom: 1rem; /* Space below the notification */
+    padding: 1rem; /* Padding inside the notification */
+    opacity: 0.9; /* Slightly transparent */
+    transition: opacity 0.3s ease; /* Transition for fading effect */
+}
+
+.notification.hidden {
+    opacity: 0; /* Hidden state */
+    pointer-events: none; /* Prevent interactions when hidden */
+}
