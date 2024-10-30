@@ -1,16 +1,17 @@
+
+
+
 import React from 'react';
-import { Link } from 'react-router-dom';
-import { events } from '../data';
+import PostList from '../components/PostList';
+
 function Home() {
   return (
-    <div className="grid grid-cols-3 gap-4">
-      {events.map(event => (
-        <Link to={`/events/${event.id}`} key={event.id} className="card">
-          <h2>{event.name}</h2>
-          <p>{event.date}</p>
-        </Link>
-      ))}
+<div className="homepage">
+      <h1 className="text-3xl font-bold mb-6 text-center">Welcome to the Event Manager</h1>
+      {/* Other homepage content */}
+      <PostList /> {/* Renders PostList on the main page */}
     </div>
   );
 }
+
 export default Home;
