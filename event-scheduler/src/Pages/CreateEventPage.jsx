@@ -1,5 +1,4 @@
-// src/pages/CreateEventPage.jsx
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import CreateEventForm from "../components/CreateEventForm";
 
@@ -7,11 +6,22 @@ function CreateEventPage() {
   const [error, setError] = useState("");
   const navigate = useNavigate();
 
+  useEffect(() => {
+    const apiToken = localStorage.getItem("apiToken");
+
+    // If no token, show alert and redirect to sign in page
+    if (!apiToken) {
+      alert("You need to sign in first to create an event.");
+      navigate("/signin");
+    }
+  }, [navigate]);
+
   const handleSubmit = async (formData) => {
     const apiToken = localStorage.getItem("apiToken");
 
     if (!apiToken) {
-      setError("You must have a valid API token to create an event.");
+      alert("You must sign in to create an event."); // Alert before redirecting
+      navigate("/signin");
       return;
     }
 
@@ -45,3 +55,4 @@ function CreateEventPage() {
 }
 
 export default CreateEventPage;
+
