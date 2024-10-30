@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { BrowserRouter as Router, Routes, Route, Navigate } from 'react-router-dom';
+import { BrowserRouter as Router, Routes, Route, Navigate, Link, Outlet } from 'react-router-dom';
 import HomePage from './Pages/HomePage';
 import EventDetailsPage from './pages/EventDetailsPage';
 import SignUpPage from './pages/SignUpPage';
