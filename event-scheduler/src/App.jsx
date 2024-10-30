@@ -1,37 +1,48 @@
-import "./App.css";
-import Layout from "./components/Layout";
-import About from "./components/About";
-import Home from "./components/Home";
-import PostList from "./components/PostList";
-import SignIn from "./components/SignIn";
-import SignUp from "./components/SignUp";
-
-
-
-import {
-  createBrowserRouter,
-  createRoutesFromElements,
-  Route,
-  RouterProvider,
-} from "react-router-dom";
-import PostPage from "./components/PostPage";
+/* eslint-disable react/no-unescaped-entities */
+import React, { useState, useEffect } from 'react';
+import { BrowserRouter as Router, Routes, Route, Navigate } from 'react-router-dom';
+import HomePage from './Pages/HomePage';
+import EventDetailsPage from './pages/EventDetailsPage';
+import SignIn from './components/SignIn';
+import SignUp from './components/SignUp';
+import CreateEventPage from './Pages/CreateEventPage';
+import ProtectedRoute from './components/ProtectedRoute';
+import NavBar from './components/Navbar';
+import PostList from './components/PostList';
+import PostPage from './components/PostPage';
 
 function App() {
-  const router = createBrowserRouter(
-    createRoutesFromElements(
-      <Route path="/" element={<Layout />}>
-        <Route index element={<Home />} />
-        <Route path="about" element={<About />} />
-        <Route path="posts" element={<PostList />} />
-        <Route path="posts/:id" element={<PostPage />} />
-        <Route path="signin" element={<SignIn />} />
-        <Route path="signup" element={<SignUp />} />
+    const [theme, setTheme] = useState('light');
 
-      </Route>
-    )
-  );
+    const toggleTheme = () => setTheme((prevTheme) => (prevTheme === 'light' ? 'dark' : 'light'));
 
-  return <RouterProvider router={router} />;
+    useEffect(() => {
+        document.documentElement.setAttribute('data-theme', theme);
+    }, [theme]);
+
+    return (
+        <Router>
+            <NavBar toggleTheme={toggleTheme} />
+            <Routes>
+                <Route path="/" element={<HomePage />} />
+                <Route path="/event/:id" element={<EventDetailsPage />} />
+                <Route path="/signin" element={<SignIn />} />
+                <Route path="/signup" element={<SignUp />} />
+                <Route path="/posts" element={<PostList />} />
+                <Route path="/posts/:id" element={<PostPage />} />
+                <Route path="/create-event" element={<CreateEventPage />}></Route>
+                <Route
+                    path="/create-event"
+                    element={
+                        <ProtectedRoute>
+                            <CreateEventPage />
+                        </ProtectedRoute>
+                    }
+                />
+                <Route path="*" element={<Navigate to="/" />} />
+            </Routes>
+        </Router>
+    );
 }
 
 export default App;

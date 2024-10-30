@@ -2,19 +2,87 @@ import { NavLink, Link } from "react-router-dom";
 
 function Navbar() {
   return (
-    <nav>
-      <span>Logo</span>
-      <div>
-        <NavLink to="/">Home</NavLink>
-        <NavLink to="/about">About</NavLink>
-        <NavLink to="/posts">Posts</NavLink>
-        <NavLink to="/signin">SignIn</NavLink>
-        <NavLink to="/signup">SignUp</NavLink>
-        {/* <Link to="/">Home</Link>
-        <Link to="/about">About</Link> */}
+    <nav className="navbar bg-base-100 shadow-md p-4">
+      {/* Create Event Button */}
+      <div className="navbar-start">
+        <Link to="/create-event" className="btn btn-primary">
+          Create New Event
+        </Link>
+      </div>
+
+      {/* Logo */}
+      <div className="navbar-center">
+        <Link to="/" className="text-xl font-bold">Logo</Link>
+      </div>
+
+      {/* Nav Links */}
+      <div className="navbar-end hidden lg:flex">
+        <ul className="menu menu-horizontal space-x-4">
+          <li>
+            <NavLink
+              to="/"
+              className={({ isActive }) =>
+                `hover:bg-primary hover:text-white rounded-lg px-3 py-2 transition ${
+                  isActive ? "bg-primary text-white" : ""
+                }`
+              }
+            >
+              Home
+            </NavLink>
+          </li>
+          <li>
+            <NavLink
+              to="/about"
+              className={({ isActive }) =>
+                `hover:bg-primary hover:text-white rounded-lg px-3 py-2 transition ${
+                  isActive ? "bg-primary text-white" : ""
+                }`
+              }
+            >
+              About
+            </NavLink>
+          </li>
+          <li>
+            <NavLink
+              to="/posts"
+              className={({ isActive }) =>
+                `hover:bg-primary hover:text-white rounded-lg px-3 py-2 transition ${
+                  isActive ? "bg-primary text-white" : ""
+                }`
+              }
+            >
+              Posts
+            </NavLink>
+          </li>
+          <li>
+            <NavLink
+              to="/signin"
+              className={({ isActive }) =>
+                `hover:bg-primary hover:text-white rounded-lg px-3 py-2 transition ${
+                  isActive ? "bg-primary text-white" : ""
+                }`
+              }
+            >
+              SignIn
+            </NavLink>
+          </li>
+          <li>
+            <NavLink
+              to="/signup"
+              className={({ isActive }) =>
+                `hover:bg-primary hover:text-white rounded-lg px-3 py-2 transition ${
+                  isActive ? "bg-primary text-white" : ""
+                }`
+              }
+            >
+              SignUp
+            </NavLink>
+          </li>
+        </ul>
       </div>
     </nav>
   );
 }
 
 export default Navbar;
+
