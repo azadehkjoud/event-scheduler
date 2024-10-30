@@ -3,36 +3,33 @@ import { useNavigate } from 'react-router-dom';
 
 function SignInPage() {
   const [formData, setFormData] = useState({ username: '', password: '' });
-  const [showNotification, setShowNotification] = useState(false); // State for notification visibility
+  const [error, setError] = useState(null);
   const navigate = useNavigate();
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    fetch('http://localhost:5000/api/register', {
+    fetch('http://localhost:5000/api/login', {  // Replace with your login API endpoint
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify(formData),
     })
       .then(response => {
         if (response.ok) {
-          setShowNotification(true); // Show notification on successful registration
-          setTimeout(() => {
-            setShowNotification(false); // Hide notification after 3 seconds
-            navigate('/signin'); // Redirect to sign-in page after registration
-          }, 3000);
+          navigate('/events'); // Redirect to the main page after successful sign-in
+        } else {
+          setError("Invalid username or password. Please try again.");
         }
       })
-      .catch(error => console.error('Error signing up:', error));
+      .catch(error => {
+        console.error('Error signing in:', error);
+        setError("An error occurred. Please try again later.");
+      });
   };
 
   return (
     <div className="container mx-auto p-4">
-      {showNotification && (
-        <div className="bg-lightblue-500 text-white p-4 rounded-md mb-4 opacity-90">
-          Sign-up successful! You can now sign in.
-        </div>
-      )}
-      <h1 className="text-2xl font-bold mb-4">Sign Up</h1>
+      {error && <div className="notification text-red-500">{error}</div>}
+      <h1 className="text-2xl font-bold mb-4">Sign In</h1>
       <form onSubmit={handleSubmit}>
         <input
           type="text"
@@ -48,7 +45,7 @@ function SignInPage() {
           placeholder="Password"
           className="input input-bordered mb-4 w-full"
         />
-        <button type="submit" className="btn btn-primary w-full">Sign Up</button>
+        <button type="submit" className="btn btn-primary w-full">Sign In</button>
       </form>
     </div>
   );
