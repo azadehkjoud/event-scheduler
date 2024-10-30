@@ -10,10 +10,10 @@ function CreateEventPage() {
     const apiToken = localStorage.getItem("apiToken");
 
     // If no token, show alert and redirect to sign in page
-    if (!apiToken) {
-      alert("You need to sign in first to create an event.");
-      navigate("/signin");
-    }
+    // Temporarily disable redirect for testing
+  // if (!apiToken) {
+  //   navigate("/signin");
+  // }
   }, [navigate]);
 
   const handleSubmit = async (formData) => {
