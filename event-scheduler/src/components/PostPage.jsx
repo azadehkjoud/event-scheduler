@@ -19,16 +19,25 @@ function PostPage() {
   }, [id]);
 
   return (
-    <>
-      {post && (
-        <>
-          <p> id: {post.id}</p>
-          <p> title: {post.title}</p>
-          <p> body: {post.body}</p>
-          <button onClick={() => navigate(-1)}>Back</button>
-        </>
-      )}
-    </>
+    <div className="flex justify-center items-center min-h-screen bg-light-pink"> {/* Light pink background */}
+      <div className="bg-pink-300 rounded-full p-8 shadow-lg w-1/2 h-1/2 flex flex-col items-center justify-center"> {/* Bigger circle box */}
+        {post ? (
+          <>
+            <h1 className="text-3xl font-bold mb-4 text-center">{post.title}</h1>
+            <p className="text-gray-700 mb-2 text-center">ID: {post.id}</p>
+            <p className="text-gray-600 text-center">{post.body}</p>
+            <button 
+              onClick={() => navigate(-1)} 
+              className="mt-4 p-2 bg-blue-500 text-white rounded" // Centered button
+            >
+              Back
+            </button>
+          </>
+        ) : (
+          <p className="text-center">Loading...</p>
+        )}
+      </div>
+    </div>
   );
 }
 
@@ -38,35 +47,3 @@ export default PostPage;
 
 
 
-// import React, { useState, useEffect } from 'react';
-// import { useParams } from 'react-router-dom';
-// import axios from 'axios';
-
-// function PostPage() {
-//   const { postId } = useParams();
-//   const [post, setPost] = useState(null);
-
-//   useEffect(() => {
-//     axios
-//       .get(`https://jsonplaceholder.typicode.com/posts/${postId}`)
-//       .then((response) => {
-//         setPost(response.data);
-//       })
-//       .catch((error) => {
-//         console.log(error);
-//       });
-//   }, [postId]);
-
-//   if (!post) return <p>Loading...</p>;
-
-//   return (
-//     <div className="container mx-auto px-4 py-8">
-//       <div className="bg-white rounded-lg shadow-lg p-8">
-//         <h2 className="text-3xl font-bold mb-4">{post.title}</h2>
-//         <p className="text-gray-700 text-lg">{post.body}</p>        
-//       </div>
-//     </div>
-//   );
-// }
-
-// export default PostPage;
