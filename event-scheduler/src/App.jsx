@@ -8,8 +8,8 @@ import ProtectedRoute from './components/ProtectedRoute';
 import NavBar from './components/Navbar';
 import PostList from './components/PostList';
 import PostPage from './components/PostPage';
-import SignInPage from './pages/SignInPage';
 import SignUpPage from './pages/SignUpPage';
+import SignInPage from './pages/SignInPage';
 
 function App() {
     const [theme, setTheme] = useState('light');

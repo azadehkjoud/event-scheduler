@@ -1,4 +1,5 @@
 import { NavLink, Link } from "react-router-dom";
+import logo from "../assets/img/logo.jpeg";
 
 function Navbar() {
   return (
@@ -12,7 +13,9 @@ function Navbar() {
 
       {/* Logo */}
       <div className="navbar-center">
-        <Link to="/" className="text-xl font-bold">Logo</Link>
+        <Link to="/" className="flex items-center">
+          <img src={logo} alt="Logo" className="h-20 w-auto" /> {/* Adjust size as needed */}
+        </Link>
       </div>
 
       {/* Nav Links */}
@@ -85,4 +88,3 @@ function Navbar() {
 }
 
 export default Navbar;
-
