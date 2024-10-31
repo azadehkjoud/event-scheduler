@@ -10,6 +10,7 @@ import PostList from './components/PostList';
 import PostPage from './components/PostPage';
 import SignUpPage from './pages/SignUpPage';
 import SignInPage from './pages/SignInPage';
+import Footer from './components/Footer';
 
 function App() {
     const [theme, setTheme] = useState('light');
@@ -30,7 +31,6 @@ function App() {
                 <Route path="/signup" element={<SignUpPage />} />
                 <Route path="/posts" element={<PostList />} />
                 <Route path="/posts/:id" element={<PostPage />} />
-                <Route path="/create-event" element={<CreateEventPage />}></Route>
                 <Route
                     path="/create-event"
                     element={
@@ -41,6 +41,7 @@ function App() {
                 />
                 <Route path="*" element={<Navigate to="/" />} />
             </Routes>
+            <Footer /> 
         </Router>
     );
 }
