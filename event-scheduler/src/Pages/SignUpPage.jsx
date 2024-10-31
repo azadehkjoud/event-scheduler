@@ -1,4 +1,3 @@
-// src/pages/SignUpPage.jsx
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { FaGoogle, FaFacebook, FaApple } from 'react-icons/fa'; 
@@ -41,7 +40,7 @@ function SignUpPage() {
     <div className="min-h-screen flex flex-col lg:flex-row items-center justify-center bg-base-200">
       <div className="w-full lg:w-1/2 p-6">
         <form onSubmit={handleSubmit} className="card bg-base-100 shadow-xl p-6 mx-auto max-w-md">
-          <h1 className="text-4xl font-bold mb-6 text-center">Sign Up</h1>
+          <h1 className="text-4xl font-bold mb-6 text-primary text-center">Sign Up</h1>
           
           <input
             type="text"
@@ -79,7 +78,7 @@ function SignUpPage() {
             <input type="checkbox" className="checkbox checkbox-primary mr-2" required />
             <span>I agree to the <a href="#" className="link link-primary">Terms and Conditions</a></span>
           </div>
-          <button type="submit" className="btn btn-primary w-full">Sign Up</button>
+          <button type="submit" className="btn btn-primary text-white w-full">Sign Up</button>
         </form>
         <div className="text-center mt-4 text-gray-500 italic">
           Already have an account? <a href="/signin" className="link link-primary">Sign in</a>
