@@ -31,7 +31,7 @@ function SignUpPage() {
           <form onSubmit={handleSubmit} className="card bg-base-100 shadow-xl p-6">
             <h1 className="text-4xl font-bold mb-6">Sign Up</h1>
             <img 
-              src="https://example.com/logo.png" // Replace with your logo URL
+              src="https://example.com/logo.png" // Our logo URL
               alt="Logo"
               className="w-20 h-20 mx-auto mb-4"
             />
