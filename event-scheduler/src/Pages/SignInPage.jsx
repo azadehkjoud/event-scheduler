@@ -37,11 +37,10 @@ function SignInPage() {
 
   return (
     <div className="min-h-screen flex flex-col lg:flex-row items-center justify-center bg-base-200">
-      {/* Left Side: Form */}
-      <div className="w-full lg:w-1/2 p-6">
+        <div className="w-full lg:w-1/2 p-6">
         <form onSubmit={handleSubmit} className="card bg-base-100 shadow-xl p-6 mx-auto max-w-md">
-          <h1 className="text-4xl font-bold mb-6 text-center">Sign In</h1>
-
+          <h1 className="text-4xl font-bold mb-6 text-primary text-center">Sign In</h1>
+          
           <input
             type="text"
             placeholder="Username or Email"
@@ -59,7 +58,7 @@ function SignInPage() {
             required
           />
           <div className="flex items-center mb-4">
-            <button type="submit" className="btn btn-primary w-full">Sign In</button>
+            <button type="submit" className="btn btn-primary text-white w-full">Sign In</button>
           </div>
         </form>
         <div className="divider">OR</div>

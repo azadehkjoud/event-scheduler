@@ -116,7 +116,7 @@ function CreateEventForm({ onSubmit, error }) {
           onChange={(e) => setNotes(e.target.value)}
         ></textarea>
       </div>
-      <button type="submit" className="btn btn-primary w-full">
+      <button type="submit" className="btn btn-primary text-white w-full">
         Create Event
       </button>
     </form>
