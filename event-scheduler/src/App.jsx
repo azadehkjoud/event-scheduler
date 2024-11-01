@@ -31,6 +31,7 @@ function App() {
                 <Route path="/signup" element={<SignUpPage />} />
                 <Route path="/posts" element={<PostList />} />
                 <Route path="/posts/:id" element={<PostPage />} />
+                <Route path="/create-event" element={<CreateEventPage />} />
                 <Route
                     path="/create-event"
                     element={

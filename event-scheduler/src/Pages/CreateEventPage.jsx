@@ -9,11 +9,14 @@ function CreateEventPage() {
   useEffect(() => {
     const apiToken = localStorage.getItem("apiToken");
 
-    // If no token, show alert and redirect to sign in page
-    // Temporarily disable redirect for testing
-  // if (!apiToken) {
-  //   navigate("/signin");
-  // }
+    // If no token, redirect to sign in page
+    // Commented out for testing purposes
+    /*
+    if (!apiToken) {
+      alert("You must sign in to create an event."); // Alert before redirecting
+      navigate("/signin");
+    }
+    */
   }, [navigate]);
 
   const handleSubmit = async (formData) => {
@@ -49,7 +52,8 @@ function CreateEventPage() {
   return (
     <div className="container mx-auto p-6">
       <h1 className="text-2xl font-bold mb-4">Create Event</h1>
-      <CreateEventForm onSubmit={handleSubmit} error={error} />
+      {error && <div className="alert alert-error">{error}</div>}
+      <CreateEventForm onSubmit={handleSubmit} />
     </div>
   );
 }
