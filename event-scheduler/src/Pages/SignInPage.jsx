@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { useNavigate } from 'react-router-dom';
+import { useNavigate, Link } from 'react-router-dom';
 import { FaGoogle, FaFacebook, FaApple } from 'react-icons/fa';
 
 function SignInPage() {
@@ -13,15 +13,16 @@ function SignInPage() {
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify(formData),
     })
-      .then(response => {
+      .then((response) => {
         if (response.ok) {
           navigate('/dashboard');
         } else {
           console.error('Sign in failed.');
         }
       })
-      .catch(error => console.error('Error signing in:', error));
+      .catch((error) => console.error('Error signing in:', error));
   };
+
   const handleGoogleSignIn = () => {
     window.location.href = 'https://accounts.google.com/o/oauth2/auth?client_id=YOUR_GOOGLE_CLIENT_ID';
   };
@@ -31,6 +32,7 @@ function SignInPage() {
   const handleAppleSignIn = () => {
     window.location.href = 'https://appleid.apple.com/auth/authorize?client_id=YOUR_APPLE_CLIENT_ID';
   };
+
   return (
     <div className="min-h-screen flex flex-col lg:flex-row items-center justify-center bg-base-200">
       {/* Left Side: Form */}
@@ -57,8 +59,20 @@ function SignInPage() {
           <div className="flex items-center mb-4">
             <button type="submit" className="btn btn-primary text-white w-full">Sign In</button>
           </div>
+          
+          {/* Message for Sign Up */}
+          <p className="text-center mt-4">
+            Don't have an account?{' '}
+            <Link to="/signup" className="text-primary font-semibold">
+              Click here
+            </Link>{' '}
+            to create one.
+          </p>
+          <p className="text-center text-sm mt-1 text-gray-500">It's easy and free!</p>
         </form>
+        
         <div className="divider">OR</div>
+        
         <div className="flex gap-4 justify-center">
           <button className="btn btn-outline btn-info flex items-center" onClick={handleGoogleSignIn}>
             <FaGoogle className="mr-2" /> Sign in with Google
