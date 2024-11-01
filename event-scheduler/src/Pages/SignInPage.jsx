@@ -1,9 +1,11 @@
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { FaGoogle, FaFacebook, FaApple } from 'react-icons/fa';
+
 function SignInPage() {
   const [formData, setFormData] = useState({ identifier: '', password: '' });
   const navigate = useNavigate();
+
   const handleSubmit = (e) => {
     e.preventDefault();
     fetch('http://localhost:5000/api/signin', {
@@ -53,7 +55,7 @@ function SignInPage() {
             required
           />
           <div className="flex items-center mb-4">
-            <button type="submit" className="btn btn-primary w-full">Sign In</button>
+            <button type="submit" className="btn btn-primary text-white w-full">Sign In</button>
           </div>
         </form>
         <div className="divider">OR</div>
@@ -72,4 +74,5 @@ function SignInPage() {
     </div>
   );
 }
+
 export default SignInPage;

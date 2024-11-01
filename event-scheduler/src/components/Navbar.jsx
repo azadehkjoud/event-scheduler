@@ -6,7 +6,7 @@ function Navbar() {
     <nav className="navbar bg-base-100 shadow-md p-4">
       {/* Create Event Button */}
       <div className="navbar-start">
-        <Link to="/create-event" className="btn btn-primary">
+        <Link to="/create-event" className="btn btn-primary text-white ">
           Create New Event
         </Link>
       </div>
@@ -54,7 +54,7 @@ function Navbar() {
                 }`
               }
             >
-              Posts
+              Current Events
             </NavLink>
           </li>
           <li>

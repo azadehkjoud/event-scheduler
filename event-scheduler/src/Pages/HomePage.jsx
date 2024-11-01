@@ -1,17 +1,30 @@
-
-
-
 import React from 'react';
 import PostList from '../components/PostList';
+import dateScrabble from '../assets/img/agenda.jpg';
 
 function Home() {
   return (
-<div className="homepage">
-      <h1 className="text-3xl font-bold mb-6 text-center">Welcome to the Event Manager</h1>
-      {/* Other homepage content */}
+    <div className="homepage">
+      <div
+        className="hero min-h-[60vh] max-w-8xl mx-auto my-10 rounded-lg shadow-lg overflow-hidden" // Center and limit width
+        style={{
+          backgroundImage: `url(${dateScrabble})`,
+          backgroundSize: 'cover',
+          backgroundPosition: 'center',
+        }}
+      >
+        <div className="hero-overlay bg-opacity-10"></div>
+        <div className="hero-content text-neutral-content text-center p-8">
+          <div className="max-w-md">
+        
+          </div> 
+        </div>
+      </div>
       <PostList /> {/* Renders PostList on the main page */}
     </div>
   );
 }
 
 export default Home;
+
+
