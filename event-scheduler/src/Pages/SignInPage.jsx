@@ -22,24 +22,21 @@ function SignInPage() {
       })
       .catch(error => console.error('Error signing in:', error));
   };
-
   const handleGoogleSignIn = () => {
     window.location.href = 'https://accounts.google.com/o/oauth2/auth?client_id=YOUR_GOOGLE_CLIENT_ID';
   };
-
   const handleFacebookSignIn = () => {
     window.location.href = 'https://www.facebook.com/v10.0/dialog/oauth?client_id=YOUR_FACEBOOK_CLIENT_ID';
   };
-
   const handleAppleSignIn = () => {
     window.location.href = 'https://appleid.apple.com/auth/authorize?client_id=YOUR_APPLE_CLIENT_ID';
   };
-
   return (
     <div className="min-h-screen flex flex-col lg:flex-row items-center justify-center bg-base-200">
-        <div className="w-full lg:w-1/2 p-6">
+      {/* Left Side: Form */}
+      <div className="w-full lg:w-1/2 p-6">
         <form onSubmit={handleSubmit} className="card bg-base-100 shadow-xl p-6 mx-auto max-w-md">
-          <h1 className="text-4xl font-bold mb-6 text-primary text-center">Sign In</h1>
+          <h1 className="text-4xl font-bold mb-6 text-center">Sign In</h1>
           
           <input
             type="text"
