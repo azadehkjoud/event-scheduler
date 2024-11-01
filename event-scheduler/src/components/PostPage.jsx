@@ -9,7 +9,7 @@ function PostPage() {
 
   useEffect(() => {
     axios
-      .get(`https://jsonplaceholder.typicode.com/posts/${id}`)
+      .get(`http://localhost:3001/api/events/${id}`)
       .then((response) => {
         setPost(response.data);
       })
@@ -25,7 +25,7 @@ function PostPage() {
           <>
             <h1 className="text-3xl font-bold mb-4 text-center">{post.title}</h1>
             <p className="text-gray-700 mb-2 text-center">ID: {post.id}</p>
-            <p className="text-gray-600 text-center">{post.body}</p>
+            <p className="text-gray-600 text-center">{post.description}</p>
             <button 
               onClick={() => navigate(-1)} 
               className="mt-4 p-2 bg-blue-500 text-white rounded" // Centered button
