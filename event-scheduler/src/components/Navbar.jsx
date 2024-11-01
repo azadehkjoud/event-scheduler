@@ -1,5 +1,5 @@
 import { NavLink, Link } from "react-router-dom";
-import logo from "../assets/img/logo.jpeg";
+import logo from "../assets/img/logo.png";
 
 function Navbar() {
   return (
@@ -35,18 +35,6 @@ function Navbar() {
           </li>
           <li>
             <NavLink
-              to="/about"
-              className={({ isActive }) =>
-                `hover:bg-primary hover:text-white rounded-lg px-3 py-2 transition ${
-                  isActive ? "bg-primary text-white" : ""
-                }`
-              }
-            >
-              About
-            </NavLink>
-          </li>
-          <li>
-            <NavLink
               to="/posts"
               className={({ isActive }) =>
                 `hover:bg-primary hover:text-white rounded-lg px-3 py-2 transition ${
@@ -66,7 +54,7 @@ function Navbar() {
                 }`
               }
             >
-              SignIn
+              Sign In
             </NavLink>
           </li>
           <li>
@@ -78,7 +66,7 @@ function Navbar() {
                 }`
               }
             >
-              SignUp
+              Sign Up
             </NavLink>
           </li>
         </ul>
