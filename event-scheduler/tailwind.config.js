@@ -16,11 +16,11 @@ export default defineConfig({
     themes: [
       {
         mytheme: {
-          primary: "#7091E6", // Customize your primary color
-          secondary: "#3D52A0", // Customize your secondary color
-          accent: "#8697C4",
-          neutral: "#ADBBDA",
-          "base-100": "#EDE8F5",
+          primary: "#D8125B", // Customize your primary color
+          secondary: "#2C2E39", // Customize your secondary color
+          accent: "#CA7D94",
+          neutral: "#CA7D94",
+          "base-100": "#022B3A",
         },
       },
     ],
