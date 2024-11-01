@@ -48,9 +48,10 @@ function PostList() {
 
   useEffect(() => {
     axios
-      .get("https://jsonplaceholder.typicode.com/posts")
+      .get('http://localhost:3001/api/events')
       .then((response) => {
-        setPosts(response.data);
+        setPosts(response.data.results);
+        console.log(response);
       })
       .catch((error) => {
         console.log(error);
@@ -61,13 +62,13 @@ function PostList() {
     <div className="container mx-auto px-4 py-8">
       <h1 className="text-3xl font-bold mb-6 text-center">Blog Posts</h1>
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-6">
-        {posts.map((post) => (
+        {posts?.map((post) => (
           <div
             key={post.id}
             className="bg-pink-300 rounded-full shadow-md p-6 hover:shadow-lg transition-shadow duration-200 flex flex-col items-center justify-center text-center w-60 h-60 mx-auto"
           >
             {/* <h2 className="text-lg font-semibold mb-2 truncate">{post.title}</h2> */}
-            <p className="text-gray-100 truncate text-white">{post.body.slice(0, 15)}...</p>
+            <p className="text-gray-100 truncate text-white">{post.description.slice(0, 15)}...</p>
             <Link
               to={`/posts/${post.id}`}
               className="text-blue-500 hover:underline mt-4"
