@@ -6,7 +6,7 @@ function Home() {
   return (
     <div className="homepage">
       <div
-        className="hero min-h-[60vh] max-w-8xl mx-auto my-10 rounded-lg shadow-lg overflow-hidden" // Center and limit width
+        className="hero min-h-[60vh] max-w-7xl mx-auto my-10 rounded-lg shadow-lg overflow-hidden" 
         style={{
           backgroundImage: `url(${dateScrabble})`,
           backgroundSize: 'cover',
