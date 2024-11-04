@@ -37,7 +37,7 @@ function SignUpPage() {
   };
 
   return (
-    <div className="min-h-screen flex flex-col lg:flex-row items-center justify-center bg-base-200">
+    <div className="min-h-screen flex flex-col lg:flex-row items-center justify-center bg-base-200 -mt-20">
       <div className="w-full lg:w-1/2 p-6">
         <form onSubmit={handleSubmit} className="card bg-base-100 shadow-xl p-6 mx-auto max-w-md">
           <h1 className="text-4xl font-bold mb-6 text-primary text-center">Sign Up</h1>
