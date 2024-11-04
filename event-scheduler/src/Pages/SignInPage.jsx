@@ -79,7 +79,7 @@ function SignInPage() {
           <button className="btn btn-outline btn-primary flex items-center" onClick={handleFacebookSignIn}>
             <FaFacebook className="mr-2" /> Sign in with Facebook
           </button>
-          <button className="btn btn-outline btn-secondary flex items-center" onClick={handleAppleSignIn}>
+          <button className="btn btn-outline btn-neutral flex items-center" onClick={handleAppleSignIn}>
             <FaApple className="mr-2" /> Sign in with Apple
           </button>
         </div>

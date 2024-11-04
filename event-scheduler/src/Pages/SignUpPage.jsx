@@ -91,7 +91,7 @@ function SignUpPage() {
           <button className="btn btn-outline btn-primary flex items-center" onClick={handleFacebookSignUp}>
             <FaFacebook className="mr-2" /> Sign up with Facebook
           </button>
-          <button className="btn btn-outline btn-secondary flex items-center" onClick={handleAppleSignUp}>
+          <button className="btn btn-outline btn-neutral flex items-center" onClick={handleAppleSignUp}>
             <FaApple className="mr-2" /> Sign up with Apple
           </button>
         </div>
