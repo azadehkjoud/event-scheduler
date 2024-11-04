@@ -1,30 +1,26 @@
 import React from 'react';
 import PostList from '../components/PostList';
-import dateScrabble from '../assets/img/agenda.jpg';
+import localVideo from '../assets/img/video.mp4';
 
 function Home() {
   return (
     <div className="homepage">
-      <div
-        className="hero min-h-[60vh] max-w-8xl mx-auto my-10 rounded-lg shadow-lg overflow-hidden" // Center and limit width
-        style={{
-          backgroundImage: `url(${dateScrabble})`,
-          backgroundSize: 'cover',
-          backgroundPosition: 'center',
-        }}
-      >
-        <div className="hero-overlay bg-opacity-10"></div>
-        <div className="hero-content text-neutral-content text-center p-8">
-          <div className="max-w-md">
-        
-          </div> 
+      <section className="relative h-[60vh] max-w-7xl mx-auto my-10 rounded-lg shadow-lg overflow-hidden">
+        <div className="video-docker absolute top-0 left-0 w-full h-full overflow-hidden">
+          <video
+            className="min-w-full min-h-full absolute object-cover"
+            src={localVideo}
+            type="video/mp4"
+            autoPlay
+            muted
+            loop
+          ></video>
         </div>
-      </div>
+         </section>
       <PostList /> {/* Renders PostList on the main page */}
     </div>
   );
 }
 
 export default Home;
-
 

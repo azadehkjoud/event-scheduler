@@ -5,15 +5,12 @@ import { FaFacebook, FaTwitter, FaInstagram, FaLinkedin } from 'react-icons/fa';
 
 function Footer() {
   return (
-    <footer className="footer bg-neutral text-neutral-content py-8 px-4 mt-8">
+    <footer className="footer bg-neutral text-neutral-content py-2 px-4 mt-8">
       <div className="container mx-auto flex flex-col md:flex-row justify-between items-center">
         {/* Left Side: Logo and Tagline */}
         <div className="mb-6 md:mb-0">
-          <h2 className="text-2xl font-bold text-primary mb-2">Event Manager</h2>
-          <p className="text-sm">
-            Simplifying your event experience. Manage, plan, and succeed with ease!
-          </p>
-        </div>
+          <h2 className="text-3xl font-bold text-primary mb-2">100% Events</h2>
+                 </div>
 
         {/* Center: Quick Links */}
         <div className="flex flex-col text-center md:text-left md:flex-row gap-6">
@@ -41,8 +38,8 @@ function Footer() {
       </div>
 
       {/* Bottom Text */}
-      <div className="text-center mt-6 text-xs">
-        &copy; {new Date().getFullYear()} Event Manager. All rights reserved.
+      <div className="text-center mt-4 text-xs">
+        &copy; {new Date().getFullYear()} 100% Events. All rights reserved.
       </div>
     </footer>
   );

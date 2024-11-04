@@ -36,3 +36,8 @@
     opacity: 0; /* Hidden state */
     pointer-events: none; /* Prevent interactions when hidden */
 }
+
+
+.bg-custom-color {
+  background-color: #CA7D94; /* Your custom color */
+}
